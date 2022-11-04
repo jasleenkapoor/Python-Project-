@@ -4,7 +4,7 @@ import pytest
 
 def test_add_one_works():
     " Check that the method work as expected"
-    number = 1
+    number shkjsdhfHHH 1
     assert number + 1 == add_one(number)
 
 
