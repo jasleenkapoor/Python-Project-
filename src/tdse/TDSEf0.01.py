@@ -13,20 +13,23 @@ from scipy import signal
 plt.rcParams["axes.labelsize"] = 16
 
 
-#0=SHO 1=INF SQ WELL
+#0=SHO 1=INF SQ WELL 2=CUSTOM
 
 
-def make_animation(demox,choiceS_W, var1,var2,var3):
+def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
     Nx = 500
     xmin = -5
     xmax = 5
-    k = 1 
+    k=SpringK
     
-    x_array = demox
+    x_array = np.linspace(xmin, xmax, Nx)
+    v_array =demox
     if choiceS_W == 0:
         v_x = k * x_array ** 2
     if choiceS_W ==1:
         v_x = 1*(signal.square(0.7*x_array-1.6))
+    if choiceS_W == 2:
+        v_x = v_array
 
     
     
@@ -45,7 +48,7 @@ def make_animation(demox,choiceS_W, var1,var2,var3):
     t_array = np.linspace(tmin, tmax, Nt)
     
     #psi = np.exp(-(x_array+2)**2)
-    psi = np.exp(-(x_array+1)**2)
+    psi = np.exp(-(x_array+OFFSET)**2)
 
     # Calculate finite difference elements
     dt = t_array[1] - t_array[0]
@@ -108,11 +111,12 @@ xmin = -5
 xmax = 5
     
 choice=1
-var1=123
-var2=123
+
+
 var3=123
-    
-make_animation(np.linspace(xmin, xmax, Nx), choice, var1, var2, var3)
+offset=1
+K=1
+make_animation(np.linspace(xmin, xmax, Nx), choice, K, offset, var3)
 
 
 
