@@ -7,6 +7,8 @@ from findiff import FinDiff
 from scipy.sparse.linalg import inv
 from scipy.sparse import eye, diags
 import matplotlib.animation as animation
+from scipy.signal import find_peaks
+
 
 plt.rcParams["axes.labelsize"] = 16
 
@@ -120,8 +122,9 @@ ani.save("particle_in_a_well.mp4", fps=120, dpi=300)
 
 
 
-
-#use this for data psi_list.txt
-
-
+#use alldataarray is in place of the 
+#each frame is 10ms, so find number of rows/columns between two numerically similar peaks, times by 10ms
+#this gives an estimate for the time, 1/estimated time = estimated frequency
 ########################################################
+peaks = find_peaks(alldataarray, threshold=0.4)
+
