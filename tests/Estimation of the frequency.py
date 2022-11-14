@@ -78,27 +78,27 @@ for t in t_array:
 
 
 ######################################
-fig, ax = plt.subplots()
+#fig, ax = plt.subplots()
 
-ax.set_xlabel("x [arb units]")
-ax.set_ylabel("$|\Psi(x, t)|$", color="C0")
+#ax.set_xlabel("x [arb units]")
+#ax.set_ylabel("$|\Psi(x, t)|$", color="C0")
 
-ax_twin = ax.twinx()
-ax_twin.plot(x_array, v_x, color="C1")
-ax_twin.set_ylabel("V(x) [arb units]", color="C1")
+#ax_twin = ax.twinx()
+#ax_twin.plot(x_array, v_x, color="C1")
+#ax_twin.set_ylabel("V(x) [arb units]", color="C1")
 
-line, = ax.plot([], [], color="C0", lw=2)
-ax.grid()
-xdata, ydata = [], []
+#line, = ax.plot([], [], color="C0", lw=2)
+#ax.grid()
+#xdata, ydata = [], []
 
-def run(psi):
-    line.set_data(x_array, np.abs(psi)**2)
-    return line,
+#def run(psi):
+    #line.set_data(x_array, np.abs(psi)**2)
+    #return line,
 
-ax.set_xlim(x_array[0], x_array[-1])
-ax.set_ylim(0, 1)
+#ax.set_xlim(x_array[0], x_array[-1])
+#ax.set_ylim(0, 1)
 
-ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
+#ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
 #ani.save("particle_in_a_well.mp4", fps=120, dpi=300)
 
 
@@ -148,8 +148,9 @@ ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
         #print(np.where(peak <= plow))
         
 yf = np.fft.rfft(psi_list)
-d = psi_list[1] - psi_list[0]
-fs = np.fft.rfftfreq(250, d)
-
+#d = psi_list[1] - psi_list[0]
+fs = np.fft.rfftfreq(499, d=1)
 plt.plot(fs, yf)
 plt.show()
+
+#np.ndarray.shape(yf)
