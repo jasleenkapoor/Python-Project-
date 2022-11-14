@@ -7,7 +7,6 @@ from findiff import FinDiff
 from scipy.sparse.linalg import inv
 from scipy.sparse import eye, diags
 import matplotlib.animation as animation
-from scipy.signal import find_peaks
 
 
 plt.rcParams["axes.labelsize"] = 16
@@ -100,7 +99,7 @@ ax.set_xlim(x_array[0], x_array[-1])
 ax.set_ylim(0, 1)
 
 ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
-ani.save("particle_in_a_well.mp4", fps=120, dpi=300)
+#ani.save("particle_in_a_well.mp4", fps=120, dpi=300)
 
 
 
@@ -117,14 +116,33 @@ ani.save("particle_in_a_well.mp4", fps=120, dpi=300)
 
 
 
+#np.argsmax np.where
 
-
-
-
-
-#use alldataarray is in place of the 
+#use txt file Jamie uses
 #each frame is 10ms, so find number of rows/columns between two numerically similar peaks, times by 10ms
 #this gives an estimate for the time, 1/estimated time = estimated frequency
 ########################################################
-peaks = find_peaks(alldataarray, threshold=0.4)
+#data = open(Jamie.txt, mode='r')
 
+#def freq(x_array, psi_list):
+    #peak = max(psi_list)
+    #pos = x_array(np.where(psi_list == peak))
+    #print(pos)
+
+#freq()
+
+#print(psi_list)
+#print(type(psi_list))
+#print(psi_list[0])
+
+#print (max(psi_list[0]))
+#print(len(psi_list))
+
+for i in range(len(psi_list)):
+    peak = max(psi_list[i])
+    #print(x_array[np.where(psi_list[i] == peak)])
+    for j in range(len(psi_list)):
+        peak2 = max(psi_list[j])
+        plow = peak2 + 0.001
+        phigh = peak2 - 0.001
+        print(np.where(peak <= plow))
