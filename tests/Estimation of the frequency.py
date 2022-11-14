@@ -138,11 +138,18 @@ ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
 #print (max(psi_list[0]))
 #print(len(psi_list))
 
-for i in range(len(psi_list)):
-    peak = max(psi_list[i])
+#for i in range(len(psi_list)):
+    #peak = max(psi_list[i])
     #print(x_array[np.where(psi_list[i] == peak)])
-    for j in range(len(psi_list)):
-        peak2 = max(psi_list[j])
-        plow = peak2 + 0.001
-        phigh = peak2 - 0.001
-        print(np.where(peak <= plow))
+    #for j in range(len(psi_list)):
+        #peak2 = max(psi_list[j])
+        #plow = peak2 + 0.001
+        #phigh = peak2 - 0.001
+        #print(np.where(peak <= plow))
+        
+yf = np.fft.rfft(psi_list)
+d = psi_list[1] - psi_list[0]
+fs = np.fft.rfftfreq(250, d)
+
+plt.plot(fs, yf)
+plt.show()
