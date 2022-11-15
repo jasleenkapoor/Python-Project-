@@ -47,8 +47,8 @@ class firstq():
         self.saveas = saveas            #word
         
         
-    def sh(self):       # "sh" is the coad to open window 6
-        self.w6 = Tk()    # this defines the content of window 5
+    def sh(self):       # "sh" is the code to open window 6
+        self.w6 = Tk()    # this defines the content of window 6
         self.w6.title("6. simple harmonic")
         self.w6.geometry("500x350")
         b13 = Button(self.w6, bg= "pink", text = "Back", command= lambda:[self.w6.destroy(), self.usedemodata()])
@@ -60,7 +60,7 @@ class firstq():
         b8 = Button(self.w6, text="Continue", command= lambda:[self.w6.destroy(),self.continue_name()])           
         b8.pack() 
         
-    def main(self):   # "main" is the coad to open window 1
+    def main(self):   # "main" is the code to open window 1
         self.w1=Tk()    # this defines the content of window 1
         self.w1.title("1. Opening page")
         self.w1.geometry("800x400")
@@ -112,7 +112,7 @@ class firstq():
         if self.path==3:
             self.sh()
             
-    def continue_name(self): # "continue_name" is the coad to open window 7
+    def continue_name(self): # "continue_name" is the code to open window 7
         self.w7 = Tk()          # this defines the content of window 7
         self.w7.title("7. final inputs")
         self.w7.geometry("800x500")
@@ -144,7 +144,7 @@ class firstq():
         
 
         
-    def useowndata(self):  #  "useowndata" is the coad to open window 2
+    def useowndata(self):  #  "useowndata" is the code to open window 2
         self.w2 = Tk()      # this defines the content of window 2
         self.w2.title("2.use own data")
         self.w2.geometry("600x350")
@@ -159,7 +159,7 @@ class firstq():
         b3.pack()
         
     
-    def infos(self): # "infos" is the coad to open window 8 info
+    def infos(self): # "infos" is the code to open window 8 info
         self.w8 = Tk()      # this defines the content of window 8
         self.w8.title("Info")
         self.w8.geometry("400x450")
@@ -167,7 +167,7 @@ class firstq():
         t10.pack()
         
         
-    def search(self): # "search" is the coad to open window 4
+    def search(self): # "search" is the code to open window 4
         self.w4 = Tk()          # this defines the content of window 4
         self.w4.title("4. search")
         self.w4.geometry("500x350")
@@ -189,7 +189,7 @@ class firstq():
         b6.pack() 
         
         
-    def usedemodata(self): #  "usedemodata" is the coad to open window 3
+    def usedemodata(self): #  "usedemodata" is the code to open window 3
         self.w3 = Tk()      # this defines the content of window 3
         self.w3.title("3. using demo data")
         self.v = demov
@@ -203,7 +203,7 @@ class firstq():
         b5 = Button(self.w3, text="i want to plot a simple harmonic function", command = lambda:[self.w3.destroy(), self.sh()])
         b5.pack()
         
-    def fsw(self): # "fsw" is the coad to open window 5
+    def fsw(self): # "fsw" is the code to open window 5
         self.w5 = Tk()      # this defines the content of window 5
         self.w5.title("5. finite square well")
         self.w5.geometry("500x350")
