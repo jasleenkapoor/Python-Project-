@@ -1,4 +1,4 @@
-from example_package.example import add_one
+from tdse.example import add_one
 import pytest
 
 
