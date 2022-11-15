@@ -8,7 +8,7 @@ from scipy.sparse.linalg import inv
 from scipy.sparse import eye, diags
 import matplotlib.animation as animation
 import math
-from scipy import signal
+from scipy import signal # 
 
 plt.rcParams["axes.labelsize"] = 16
 
@@ -17,6 +17,23 @@ plt.rcParams["axes.labelsize"] = 16
 
 
 def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
+    '''  
+    Generates the wavefunction for the selected or given potential data
+    Parameters
+    - - - - - - - 
+    demox : str
+        name of textfile
+        
+    choiceS_W : Boolean
+        Decides if Square well or Simple Harmonic Oscillator
+        
+    SpringK : float
+        Value of Spring Constant
+    
+    OFFSET: float
+        Initial position of wave packet in x direction
+        
+    '''
     Nx = 500
     xmin = -5
     xmax = 5
@@ -91,8 +108,15 @@ def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
     line, = ax.plot([], [], color="C0", lw=2)
     ax.grid()
     xdata, ydata = [], []
-
+    print(type(psi))
     def run(psi):
+        '''  Returns the wavefunction for every unit time increment 
+        
+        Parameters
+        - - - - - - - 
+        psi : object with array attributes
+        
+        '''
         line.set_data(x_array, np.abs(psi)**2)
         return line,
 
@@ -122,7 +146,8 @@ make_animation(np.linspace(xmin, xmax, Nx), choice, K, offset, var3)
 
 
 def play_movie():
-    subprocess.call(["cmd", "/c", "start", "/max", "particle_in_a_well.gif."])
+    '''  Plays selected TDSE animation '''
+    subprocess.call(["cmd", "/c", "start", "/max", "particle_in_a_well.gif."]) #
     time.sleep(5)
     #startfile(r"particle_in_a_well.mp4")
     #subprocess.call("TASKKILL /F /IM VLC.exe", shell=True)
