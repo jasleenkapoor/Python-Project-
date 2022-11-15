@@ -39,4 +39,4 @@ def writetxt(array1,array2,array3,spacedwith):
 writetxt(t_array,x_array,psi_list," ")
         
 #            if len(array1)!=len(array2):
-#        return print("array lenths don't match")
+#        return print("array lengths don't match")
