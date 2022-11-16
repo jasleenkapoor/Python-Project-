@@ -53,7 +53,7 @@ class firstq():
         self.w6.geometry("500x350")
         b13 = Button(self.w6, bg= "pink", text = "Back", command= lambda:[self.w6.destroy(), self.usedemodata()])
         b13.pack(side=TOP, anchor=NW)
-        t6 = Label(self.w6, text="you have asked to plot a simple harmonic function", )
+        t6 = Label(self.w6, text="You have asked to plot a simple harmonic function", )
         self.choice=1
         t6.pack()    
         self.path = 3
@@ -124,7 +124,7 @@ class firstq():
         self.entry2.focus_set()
         self.entry2.pack()            
         #
-        t8 = Label(self.w7, text="Please input the spring constant, k, you would like to use. \n If you dont have a value then set this to 1", )
+        t8 = Label(self.w7, text="Please input the spring constant, k, you would like to use, if you chose the simple harmonic plot. \n If you dont have a specific value, or if you didnt chose the simple harmonic plot, \n then set this to 1", )
         t8.pack()
         self.entry3 = Entry(self.w7, width=40)
         self.entry3.focus_set()
@@ -209,7 +209,7 @@ class firstq():
         self.w5.geometry("500x350")
         b13 = Button(self.w5, bg= "pink", text = "Back", command= lambda:[self.w5.destroy(), self.usedemodata()()])
         b13.pack(side=TOP, anchor=NW)
-        t5 = Label(self.w5, text="you have asked to plot a finite square well", )
+        t5 = Label(self.w5, text="You have asked to plot a finite square well", )
         self.choice=2
         t5.pack()
         self.path = 2
@@ -222,7 +222,4 @@ class firstq():
     
         
         
-runclass=firstq(0, 0, 0, 0, 0, 0)
-runclass.main()
-print("The values of: choice, shouldsave, springconst, filetype, saveas, v")
-print("The updated values are ", runclass.export())
+
