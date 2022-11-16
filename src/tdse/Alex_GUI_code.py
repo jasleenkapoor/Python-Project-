@@ -124,7 +124,7 @@ class firstq():
         self.entry2.focus_set()
         self.entry2.pack()            
         #
-        t8 = Label(self.w7, text="Please input the spring constant, k, you would like to use, if you chose the simple harmonic plot. \n If you dont have a specific value, or if you didnt chose the simple harmonic plot, \n then set this to 1", )
+        t8 = Label(self.w7, text="Please input the spring constant, k, you would like to use, if you chose the simple harmonic plot. \n If you don't have a specific value, or if you didn't chose the simple harmonic plot, \n then set this to 1", )
         t8.pack()
         self.entry3 = Entry(self.w7, width=40)
         self.entry3.focus_set()
