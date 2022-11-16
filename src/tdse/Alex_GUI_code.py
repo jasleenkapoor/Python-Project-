@@ -150,7 +150,7 @@ class firstq():
         self.w2.geometry("600x350")
         b13 = Button(self.w2, bg= "pink", text = "Back", command=self.w2.destroy)
         b13.pack(side=TOP, anchor=NW)
-        t2 = Label(self.w2, text="Your Data needs to be saved in a txt file. \n What is your file called? \n Please give your answer in the form of 'title.txt' (such as testingdata.txt) and make sure your values \n for the Potential are written out on the first line of the document and separated by a comma", )
+        t2 = Label(self.w2, text="Your Data needs to be saved in a txt file. \n What is your file called? \n Please give your answer in the form of 'title.txt' (such as testingdata.txt) and make sure your 500 values \n for the Potential are written out on the first line of the document and separated by a space", )
         t2.pack()
         self.entry = Entry(self.w2, width=40)
         self.entry.focus_set()
@@ -163,7 +163,7 @@ class firstq():
         self.w8 = Tk()      # this defines the content of window 8
         self.w8.title("Info")
         self.w8.geometry("400x450")
-        t10 = Label(self.w8, text="This program is used to help you...")
+        t10 = Label(self.w8, text="This is a program to help you solve \n the Time-Dependent Schrödinger Equation for \n an arbitrary potential you have specified. \n \n  You have the choice to either use demo \n values of the potential, which can \n print either a simple harmonic equation or \n a finite square well equation, or to enter \n your own values. \n \n  If you are entering your own values, \n you must save your 500 values in a txt file, \n with all your values on the top row, each \n separated by a space. \n \n  There should be no characters other\n than numbers (except decimal points), no commas or letters etc. \n \n Created by Jamie-Gowers, Jessica-Tucker, \n Alex-Prowse, jasleen Kapoor, Emlyn Davies, and Matthew Webb")
         t10.pack()
         
         
