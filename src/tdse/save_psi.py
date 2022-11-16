@@ -10,7 +10,7 @@ def writetxt(array,filename,spacedwith,txtaxis):# a function that takes the inpu
         name of textfile
     
     spacedwith: str
-        Seperates all data points in the outputed txt file.
+        Separates all data points in the outputted txt file.
     
     txtaxis: Boolean
         Displays txt file axis to show time and space outputs.'''
