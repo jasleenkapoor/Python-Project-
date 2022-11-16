@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 #Emlyn Davies 08/11/22
-#TDSE alpha v0.01
 import numpy as np
 import matplotlib.pyplot as plt
 from findiff import FinDiff

@@ -9,6 +9,89 @@ from scipy.sparse import eye, diags
 import matplotlib.animation as animation
 import math
 from scipy import signal # 
+from Alex_GUI_code import firstq as gui
+import save_psi
+import Frequency
+    #export0 == choice 0=owndata 1=SHO 2=SQ WELL
+    #export1 == save yes/no 0=n 1=y
+    #export2 == springK VALUE
+    #export3 == filetype 0=NA 1= mp4 2=gif
+    #export4 == filename to save
+    #export5 == file name to read V(x)
+
+
+
+
+
+"""def TDSE_gui():
+    try:
+        run=gui(0, 0, 0, 0, 0, 0)
+        run.main()
+    
+        Nx = 500
+        xmin = -5
+        xmax = 5
+        k=run.export()[2]
+    
+        x_array = np.linspace(xmin, xmax, Nx)
+        offset=1
+        global filename
+        if run.export()[0] == 1:
+            v_x = k * x_array ** 2
+        if run.export()[0] == 2:
+            v_x = 1*(signal.square(0.7*x_array-1.6))
+        if run.export()[0] == 0:
+            v_x = run.export()[5]
+            print(run.export()[5])
+
+        if run.export()[3] == 0:
+            print("DONT SAVE")
+        if run.export()[3] == 1:
+            filename = run.export()[4] + ".mp4"
+        if run.export()[3] == 2:
+            filename = run.export()[4] + ".gif"
+    
+        make_animation(offset, v_x)
+    except:
+        print("An unexpected error has occured, re-try:")"""
+        
+def TDSE_gui():
+    
+    run=gui(0, 0, 0, 0, 0, 0)
+    run.main()
+    
+    Nx = 500
+    xmin = -5
+    xmax = 5
+    k=run.export()[2]
+    
+    x_array = np.linspace(xmin, xmax, Nx)
+    offset=1
+    global filename
+    if run.export()[0] == 1:
+        v_x = k * x_array ** 2
+    if run.export()[0] == 2:
+        v_x = 1*(signal.square(0.7*x_array-1.6))
+    if run.export()[0] == 0:
+        v_x = np.array(run.export()[5])
+        v_x = v_x.astype(np.float)
+
+    if run.export()[3] == 0:
+        print("DONT SAVE")
+    if run.export()[3] == 1:
+        filename = run.export()[4] + ".mp4"
+    if run.export()[3] == 2:
+        filename = run.export()[4] + ".gif"
+    
+    make_animation(offset, v_x)
+
+
+
+
+
+
+
+
 
 plt.rcParams["axes.labelsize"] = 16
 
@@ -16,7 +99,7 @@ plt.rcParams["axes.labelsize"] = 16
 #0=SHO 1=INF SQ WELL 2=CUSTOM
 
 
-def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
+def make_animation(OFFSET,v_x):
     '''  
     Generates the wavefunction for the selected or given potential data
     Parameters
@@ -37,19 +120,8 @@ def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
     Nx = 500
     xmin = -5
     xmax = 5
-    k=SpringK
     
-    x_array = np.linspace(xmin, xmax, Nx)
-    v_array =demox
-    if choiceS_W == 0:
-        v_x = k * x_array ** 2
-    if choiceS_W ==1:
-        v_x = 1*(signal.square(0.7*x_array-1.6))
-    if choiceS_W == 2:
-        v_x = v_array
-
-    
-    
+    x_array=np.linspace(xmin, xmax, Nx)
     
     ############
     # Input parameters
@@ -108,7 +180,7 @@ def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
     line, = ax.plot([], [], color="C0", lw=2)
     ax.grid()
     xdata, ydata = [], []
-    print(type(psi))
+    
     def run(psi):
         '''  Returns the wavefunction for every unit time increment 
         
@@ -122,32 +194,34 @@ def make_animation(demox,choiceS_W, SpringK,OFFSET,var3):
 
     ax.set_xlim(x_array[0], x_array[-1])
     ax.set_ylim(0, 1)
-
+    
     ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
-    ani.save("particle_in_a_well.gif", fps=30, dpi=300)
+    ani.save(filename, fps=30, dpi=300)
+    
+    #save_psi.writetxt(np.square(np.abs(psi_list)),"saved_data_psi"," ",True)
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 import subprocess
 import time
 #import vlc
-Nx = 500
-xmin = -5
-xmax = 5
-    
-choice=1
 
+TDSE_gui()
 
-var3=123
-offset=1
-K=1
-make_animation(np.linspace(xmin, xmax, Nx), choice, K, offset, var3)
 
 
 
 
 def play_movie():
     '''  Plays selected TDSE animation '''
-    subprocess.call(["cmd", "/c", "start", "/max", "particle_in_a_well.gif."]) #
+    subprocess.call(["cmd", "/c", "start", "/max", filename+"."]) #
     time.sleep(5)
     #startfile(r"particle_in_a_well.mp4")
     #subprocess.call("TASKKILL /F /IM VLC.exe", shell=True)
