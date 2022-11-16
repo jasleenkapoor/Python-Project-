@@ -155,7 +155,7 @@ class firstq():
         self.entry = Entry(self.w2, width=40)
         self.entry.focus_set()
         self.entry.pack()     
-        b3 = Button(self.w2, text="search", command= lambda:[self.w2.destroy(), self.search()])
+        b3 = Button(self.w2, text="search", command= lambda:[ self.search()])
         b3.pack()
         
     
@@ -182,6 +182,7 @@ class firstq():
         b13.pack(side=TOP, anchor=NW)
         t4 = Label(self.w4, text=string, )
         t4.pack()        
+        self.w2.destroy()
         t45 = Label(self.w4, text= self.v, )
         t45.pack()
         self.path = 1
