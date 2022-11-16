@@ -111,38 +111,11 @@ for t in t_array:
 
 
 
-
-
-
-
-
-#np.argsmax np.where
-
-#use txt file Jamie uses
-#each frame is 10ms, so find number of rows/columns between two numerically similar peaks, times by 10ms
-#this gives an estimate for the time, 1/estimated time = estimated frequency
-########################################################
-#data = open(Jamie.txt, mode='r')
-
-#def freq(x_array, psi_list):
-    #peak = max(psi_list)
-    #pos = x_array(np.where(psi_list == peak))
-    #print(pos)
-
-#freq()
-
-#print(psi_list)
-#print(type(psi_list))
-#print(psi_list[0])
-
-#print (max(psi_list[0]))
-#print(len(psi_list))
-
-
-        
-yf = np.fft.rfft(psi_list)
-fs = np.fft.rfftfreq(499, d=1)
-plt.plot(fs, yf)
-plt.draw()
-
-#np.ndarray.shape(yf)
+########################################
+def freq(psi_list):
+    yf = np.fft.rfft(psi_list)
+    fs = np.fft.rfftfreq(499, d=1)
+    plt.plot(fs, yf)
+    plt.show()
+    
+freq(psi_list)
