@@ -213,20 +213,20 @@ import subprocess
 import time
 #import vlc
 
-TDSE_gui()
+#TDSE_gui()
 
 
 
 
 
-def play_movie():
+def play_movie(filename):
     '''  Plays selected TDSE animation '''
     subprocess.call(["cmd", "/c", "start", "/max", filename+"."]) #
     time.sleep(5)
     #startfile(r"particle_in_a_well.mp4")
     #subprocess.call("TASKKILL /F /IM VLC.exe", shell=True)
 
-play_movie()
+#play_movie()
 
 
 
