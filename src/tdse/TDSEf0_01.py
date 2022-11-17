@@ -53,7 +53,7 @@ import Frequency
     
         make_animation(offset, v_x)
     except:
-        print("An unexpected error has occured, re-try:")"""
+        print("An unexpected error has occurred, re-try:")"""
         
 def TDSE_gui():
     
