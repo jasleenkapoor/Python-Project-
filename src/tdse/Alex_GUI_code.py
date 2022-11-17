@@ -37,9 +37,10 @@ demov = ([0,0,0,0,0,0,0,0,0])
 #filetype will be set to 1 for mp4, or 2 for saving as a gif, will remain 0 for not saving as anything
 
 class firstq():
+    '''A class for gui guided user interface. '''
     
     def __init__(self,choice, shouldsave, springconst, filetype, saveas, v):
-        self.choice = choice            #number
+        self.choice = choice            #number  
         self.shouldsave = shouldsave    #number
         self.springconst = springconst  #number
         self.filetype = filetype        #number
@@ -48,7 +49,7 @@ class firstq():
         
         
     def sh(self):       # "sh" is the code to open window 6
-        self.w6 = Tk()    # this defines the content of window 6
+        self.w6 = Tk()    # this defines the content of window 6 
         self.w6.title("6. simple harmonic")
         self.w6.geometry("500x350")
         b13 = Button(self.w6, bg= "pink", text = "Back", command= lambda:[self.w6.destroy(), self.usedemodata()])
