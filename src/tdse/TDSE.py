@@ -9,9 +9,9 @@ from scipy.sparse import eye, diags
 import matplotlib.animation as animation
 import math
 from scipy import signal # 
-from Alex_GUI_code import firstq as gui
-import save_psi
-import Frequency
+from tdse.Alex_GUI_code import firstq as gui
+import tdse.save_psi
+import tdse.Frequency
     #export0 == choice 0=owndata 1=SHO 2=SQ WELL
     #export1 == save yes/no 0=n 1=y
     #export2 == springK VALUE
@@ -196,7 +196,13 @@ def make_animation(OFFSET,v_x):
     ax.set_ylim(0, 1)
     
     ani = animation.FuncAnimation(fig, run, psi_list, interval=10)
-    ani.save(filename, fps=30, dpi=300)
+    try:
+        ani.save(filename, fps=30, dpi=300)
+
+    except:
+        print("ffmpeg not installed, using pillow (.mp4 not possible)")
+        writergif = animation.PillowWriter(fps=30)
+        ani.save(filename,writer=writergif)
     
     #save_psi.writetxt(np.square(np.abs(psi_list)),"saved_data_psi"," ",True)
     
