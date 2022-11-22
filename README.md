@@ -24,9 +24,9 @@ NOTE: INFORMATION IN NOTEBOOK NO LONGER WORKS DUE TO UPDATE IN PIP. FOLLOWING ME
 >> 2.0 add one is 3.0
 
 Credits:
-Jasleen 
-Emlyn 
-Alex
-Jamie
-Jess
-Mathew
+Jasleen,
+\par Emlyn, 
+Alex,
+Jamie,
+Jess,
+Mathew,
