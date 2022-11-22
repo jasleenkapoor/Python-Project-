@@ -177,7 +177,7 @@ class firstq():
         self.w8.geometry("460x730")
         b13 = Button(self.w8, bg= "pink", text = "Back", command=self.w8.destroy)
         b13.pack(side=TOP, anchor=NW)
-        t10 = Label(self.w8, text="This is a program that can help you solve \n the Time-Dependent Schrödinger Equation for \n an arbitrary potential you have specified. \n \n  You also have the option to use demo \n values of the potential insted of entering your own. \n These can produce either a simple harmonic equation \n or a finite square well equation. \n \n  If you are entering your own values, \n you must save 500 values in a txt file, \n with all your values on the top row, each \n separated by a space. \n \n  There should be no characters other\n than numbers (except decimal points), \n no commas or letters etc. \n \n \n Created by: \n Emlyn Davies, \n Jamie-Gowers, \n jasleen Kapoor, \n Alex-Prowse, \n Jessica-Tucker, \n and Matthew Webb")
+        t10 = Label(self.w8, text="This is a program that can help you solve \n the Time-Dependent Schrödinger Equation for \n an arbitrary potential you have specified. \n \n  You also have the option to use demo \n values of the potential instead of entering your own. \n These can produce either a simple harmonic equation \n or a finite square well equation. \n \n  If you are entering your own values, \n you must save 500 values in a txt file, \n with all your values on the top row, each \n separated by a space. \n \n  There should be no characters other\n than numbers (except decimal points), \n no commas or letters etc. \n \n \n Created by: \n Emlyn Davies, \n Jamie-Gowers, \n jasleen Kapoor, \n Alex-Prowse, \n Jessica-Tucker, \n and Matthew Webb")
         t10.pack()
 
 
