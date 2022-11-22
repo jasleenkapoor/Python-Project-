@@ -1,8 +1,10 @@
 Python-Project- is a package coded in Python to solve the Schrodinger equation at different potentials.
 
-It is able to solve both the time-dependant and the time-independant Schrodinger equation where called to.
+It is able to solve the time-dependant Schrodinger equation in a square well or a simple harmonic oscillator.
+Motivation behind this project is to allow user with no knowledge to solve and play around with the TDSE and see how it changes with different parameters.
 
-making changes,  to the read me
+The software package should be installed in order it to run.
+when the software is run, pop up questions appear allowing the user to set its own parameters.
 
 **Description on how to install software**
 The software to install can be found in setup.cfg. 
@@ -20,3 +22,11 @@ NOTE: INFORMATION IN NOTEBOOK NO LONGER WORKS DUE TO UPDATE IN PIP. FOLLOWING ME
 
 4. add_one(2) #This will return the same as line 3, but from this point on in the code add_one() can be used as a shorthand. Must do the beginning section in order to use the function throughout
 >> 2.0 add one is 3.0
+
+Credits:
+Jasleen 
+Emlyn 
+Alex
+Jamie
+Jess
+Mathew
